@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirBnB</title>
+    <link rel="icon" type="image/png"href="https://cdn-icons-png.flaticon.com/512/888/888836.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-5.15.4-web/css/all.min.css">
+    <link rel="stylesheet" href="./assets/grid.css">
+    <link rel="stylesheet" href="./assets/base.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/responsive.css">
+</head>
+<body>
+    <div class="app">
+        <div class="main">
+            <!-- Header -->
+            <header id="header">
+                <div class="grid wide">
+                    <!-- <a href="" class="link-covid">Nhận thông tin mới nhất về biện pháp ứng phó COVID-19 của chúng tôi</a> -->
+                    <div class="row content nav">
+                        <div class="col c-3 logo">
+                            <a href="#" >
+                                <svg width="102" height="32" fill="var(--white-color)" style="display: block;">
+                                    <path
+                                        d="M29.24 22.68c-.16-.39-.31-.8-.47-1.15l-.74-1.67-.03-.03c-2.2-4.8-4.55-9.68-7.04-14.48l-.1-.2c-.25-.47-.5-.99-.76-1.47-.32-.57-.63-1.18-1.14-1.76a5.3 5.3 0 00-8.2 0c-.47.58-.82 1.19-1.14 1.76-.25.52-.5 1.03-.76 1.5l-.1.2c-2.45 4.8-4.84 9.68-7.04 14.48l-.06.06c-.22.52-.48 1.06-.73 1.64-.16.35-.32.73-.48 1.15a6.8 6.8 0 007.2 9.23 8.38 8.38 0 003.18-1.1c1.3-.73 2.55-1.79 3.95-3.32 1.4 1.53 2.68 2.59 3.95 3.33A8.38 8.38 0 0022.75 32a6.79 6.79 0 006.75-5.83 5.94 5.94 0 00-.26-3.5zm-14.36 1.66c-1.72-2.2-2.84-4.22-3.22-5.95a5.2 5.2 0 01-.1-1.96c.07-.51.26-.96.52-1.34.6-.87 1.65-1.41 2.8-1.41a3.3 3.3 0 012.8 1.4c.26.4.45.84.51 1.35.1.58.06 1.25-.1 1.96-.38 1.7-1.5 3.74-3.21 5.95zm12.74 1.48a4.76 4.76 0 01-2.9 3.75c-.76.32-1.6.41-2.42.32-.8-.1-1.6-.36-2.42-.84a15.64 15.64 0 01-3.63-3.1c2.1-2.6 3.37-4.97 3.85-7.08.23-1 .26-1.9.16-2.73a5.53 5.53 0 00-.86-2.2 5.36 5.36 0 00-4.49-2.28c-1.85 0-3.5.86-4.5 2.27a5.18 5.18 0 00-.85 2.21c-.13.84-.1 1.77.16 2.73.48 2.11 1.78 4.51 3.85 7.1a14.33 14.33 0 01-3.63 3.12c-.83.48-1.62.73-2.42.83a4.76 4.76 0 01-5.32-4.07c-.1-.8-.03-1.6.29-2.5.1-.32.25-.64.41-1.02.22-.52.48-1.06.73-1.6l.04-.07c2.16-4.77 4.52-9.64 6.97-14.41l.1-.2c.25-.48.5-.99.76-1.47.26-.51.54-1 .9-1.4a3.32 3.32 0 015.09 0c.35.4.64.89.9 1.4.25.48.5 1 .76 1.47l.1.2c2.44 4.77 4.8 9.64 7 14.41l.03.03c.26.52.48 1.1.73 1.6.16.39.32.7.42 1.03.19.9.29 1.7.19 2.5zM41.54 24.12a5.02 5.02 0 01-3.95-1.83 6.55 6.55 0 01-1.6-4.48 6.96 6.96 0 011.66-4.58 5.3 5.3 0 014.08-1.86 4.3 4.3 0 013.7 1.92l.1-1.57h2.92V23.8h-2.93l-.1-1.76a4.52 4.52 0 01-3.88 2.08zm.76-2.88c.58 0 1.09-.16 1.57-.45.44-.32.8-.74 1.08-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.55.45zM53.45 8.46c0 .35-.06.67-.22.93-.16.25-.38.48-.67.64-.29.16-.6.22-.92.22-.32 0-.64-.06-.93-.22a1.84 1.84 0 01-.67-.64 1.82 1.82 0 01-.22-.93c0-.36.07-.68.22-.93.16-.3.39-.48.67-.64.29-.16.6-.23.93-.23a1.84 1.84 0 011.6.86 2 2 0 01.21.94zm-3.4 15.3V11.7h3.18v12.08h-3.19zm11.68-8.9v.04c-.15-.07-.35-.1-.5-.13-.2-.04-.36-.04-.55-.04-.89 0-1.56.26-2 .8-.48.55-.7 1.32-.7 2.31v5.93h-3.19V11.69h2.93l.1 1.83c.32-.64.7-1.12 1.24-1.48a3.1 3.1 0 011.81-.5c.23 0 .45.02.64.06.1.03.16.03.22.06v3.2zm1.28 8.9V6.74h3.18v6.5c.45-.58.96-1.03 1.6-1.38a5.02 5.02 0 016.08 1.31 6.55 6.55 0 011.6 4.49 6.96 6.96 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.1 1.57-2.92.03zm6.15-2.52c.57 0 1.08-.16 1.56-.45.44-.32.8-.74 1.08-1.25.26-.51.38-1.12.38-1.8 0-.67-.12-1.28-.38-1.79a3.75 3.75 0 00-1.08-1.25 2.95 2.95 0 00-3.12 0c-.45.32-.8.74-1.09 1.25a4.01 4.01 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.98.45 1.56.45zm7.51 2.53V11.69h2.93l.1 1.57a3.96 3.96 0 013.54-1.89 4.1 4.1 0 013.82 2.44c.35.76.54 1.7.54 2.75v7.24h-3.19v-6.82c0-.84-.19-1.5-.57-1.99-.38-.48-.9-.74-1.56-.74-.48 0-.9.1-1.27.32-.35.23-.64.52-.86.93a2.7 2.7 0 00-.32 1.35v6.92h-3.16zm12.52 0V6.73h3.19v6.5a4.67 4.67 0 013.73-1.89 5.02 5.02 0 013.95 1.83 6.57 6.57 0 011.59 4.48 6.95 6.95 0 01-1.66 4.58 5.3 5.3 0 01-4.08 1.86 4.3 4.3 0 01-3.7-1.92l-.09 1.57-2.93.03zm6.18-2.53c.58 0 1.09-.16 1.56-.45.45-.32.8-.74 1.09-1.25.25-.51.38-1.12.38-1.8a3.42 3.42 0 00-1.47-3.04 2.95 2.95 0 00-3.12 0c-.44.32-.8.74-1.08 1.25a3.63 3.63 0 00-.38 1.8 3.42 3.42 0 001.47 3.04c.47.29.95.45 1.55.45z"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="col row c-6 suggest">
+                            <!-- Default -->
+                            <div class="suggest-text active">
+                                <span id="living" class="active">Nơi ở</span>
+                                <span id="experience" >Trải nghiệm</span>
+                                <span id="e-experience"> <a href="#">Trải nghiệm trực tuyến</a></span>
+                            </div>
+                            <!-- When scroll -->
+                           <div class="row suggest-search-box">
+                            <span>Bắt đầu tìm kiếm</span>
+                            <div class="suggest-search-box__icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                           </div>
+
+                            <!-- Detail suggest -->
+                            <div class="row list-suggest active">
+                                <label class="col c-4 row suggest-address" for="suggest-address-search">
+                                    <h5 class=" suggest-heading">Địa điểm</h5>
+                                    <input id="suggest-address-search" class="" type="text" placeholder="Bạn sắp đi đâu?">
+
+                                    <div class="sub-suggest-address">
+                                        <div class="sub-suggest-address-wrap">
+                                            <h4>Mọi lúc, mọi nơi</h4>
+                                            <a href="" class="row sub-suggest-address-link">
+                                                <div class="c-6">Tìm kiếm linh hoạt</div>
+                                                <i class="c-6 fas fa-chevron-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </label>
+
+                                <div class="col c-7 row suggest-second check-room active" style="justify-content: space-between">
+                                    <div onclick="clickCalendar()" class="col c-4 row suggest-second-item">
+                                        <h5 class="suggest-heading">Nhận phòng</h5>
+                                        <p>Thêm ngày</p>
+                                    </div>
+                                    <div onclick="clickCalendar()" class="col c-4 row suggest-second-item">
+                                        <h5 class="suggest-heading">Trả phòng</h5>
+                                        <p>Thêm ngày</p>
+                                    </div>
+                                    <div class="col c-4 row suggest-second-item suggest-customer">
+                                        <div class="suggest-customer__text">
+                                            <h5 class="suggest-heading">Khách</h5>
+                                            <p class="total-amount-customers">Thêm khách</p> 
+                                        </div>
+                                       <div class="suggest-customer__close-icon">
+                                        <i class="fas fa-times"></i>
+                                       </div>
+                                        <!-- Suggest customers -->
+                                        <div class="sub-suggest-customer ">
+                                            <div class="sub-suggest-customer-wrap">
+                                                <div class="row sub-suggest-customer-item">
+                                                    <div class="c-6 category-customer">
+                                                        <b>Người lớn</b>
+                                                        <p>Từ 13 tuổi trở lên<p>
+                                                    </div>
+                                                    <div class="c-6 amount-customer">
+                                                        <span disabled class="decrease-number-btn"><i class="fas fa-minus"></i></span>
+                                                        <div class="customer-number">0</div>
+                                                        <span class="increase-number-btn"><i class="fas fa-plus"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row sub-suggest-customer-item">
+                                                    <div class="c-6 category-customer">
+                                                        <b>Trẻ em</b>
+                                                        <p>Độ tuổi 2-12<p>
+                                                    </div>
+                                                    <div class="c-6 amount-customer">
+                                                        <span class="decrease-number-btn"><i class="fas fa-minus"></i></span>
+                                                        <div class="customer-number">0</div>
+                                                        <span class="increase-number-btn"><i class="fas fa-plus"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row sub-suggest-customer-item">
+                                                    <div class="c-6 category-customer">
+                                                        <b>Em bé</b>
+                                                        <p>Dưới 2<p>
+                                                    </div>
+                                                    <div class="c-6 amount-customer">
+                                                        <span class="decrease-number-btn"><i class="fas fa-minus"></i></span>
+                                                        <div class="customer-number">0</div>
+                                                        <span class="increase-number-btn"><i class="fas fa-plus"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="row sub-suggest-customer-item">
+                                                    <div class="c-6 category-customer">
+                                                        <b>Thú cưng</b>
+                                                        <p><a href="" class="category-customer-link">Bạn muốn mang theo động vật hỗ trợ</a></p>
+                                                    </div>
+                                                    <div class="c-6 amount-customer">
+                                                        <span class="decrease-number-btn"><i class="fas fa-minus"></i></span>
+                                                        <div class="customer-number">0</div>
+                                                        <span class="increase-number-btn"><i class="fas fa-plus"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="sub-suggest-customer-item notice">
+                                                  <p>Nếu bạn may mắn có nhiều hơn 2 thú cưng đi cùng, hãy nhớ cho Chủ nhà biết.   </p>  
+                                                </div>
+                                                
+                                            </div>
+                                        </div> 
+                                    </div> 
+                                </div> 
+
+                                <div class="col row c-7 suggest-second experience">
+                                    <h4 class="suggest-heading">Ngày</h4>
+                                    <p>Thêm thời điểm bạn muốn tham gia</p>
+                                </div>
+                               
+
+                                <label class="col c-1 suggest-search" for="suggest-address-search" >
+                                    <div class="suggest-search-icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                </label> 
+    
+                                <!-- Calendar -->
+                                <div id="calendar" class="">
+                                    <div class="calendar-wrap">
+                                        <div class="row calendar-heading">
+                                           <div>
+                                                <span onclick="showCalendar()" class="calendar-show active">
+                                                    Lịch
+                                                </span>
+                                                <span onclick="showFlexibleDays()" class="flexible-days">
+                                                    Ngày linh hoạt
+                                                </span>
+                                           </div>
+                                        </div>
+                                        <!-- Calendar info -->
+                                        <div class="row calendar-detail active">
+                                            <button class="month-btn prev-month-btn">
+                                                <i class="fas fa-chevron-left"></i>
+                                            </button>
+                                            <button class="month-btn next-month-btn">
+                                                <i class="fas fa-chevron-right"></i>
+                                            </button>
+                                            <div class="c-6">
+                                                <h4 class="heading-month">tháng 2 năm 2022</h4>
+                                                <div class="row list-days">
+                                                    <div class="row col-7">
+                                                        <div class="date">T2</div>
+                                                        <span class="day"></span>
+                                                        <span class="day rest">7</span>
+                                                        <span class="day rest">14</span>
+                                                        <span class="day rest">21</span>
+                                                        <span class="day rest">28</span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">T3</div>
+                                                        <span class="day day-past">1</span>
+                                                        <span class="day">8</span>
+                                                        <span class="day">15</span>
+                                                        <span class="day">22</span>
+                                                        <span class="day"></span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">T4</div>
+                                                        <span class="day day-past">2</span>
+                                                        <span class="day">9</span>
+                                                        <span class="day">16</span>
+                                                        <span class="day">23</span>
+                                                        <span class="day"></span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">T5</div>
+                                                        <span class="day day-past">3</span>
+                                                        <span class="day">10</span>
+                                                        <span class="day">17</span>
+                                                        <span class="day">24</span>
+                                                        <span class="day"></span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">T6</div>
+                                                        <span class="day">4</span>
+                                                        <span class="day">11</span>
+                                                        <span class="day">18</span>
+                                                        <span class="day">25</span>
+                                                        <span class="day"></span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">T7</div>
+                                                        <span class="day">5</span>
+                                                        <span class="day">12</span>
+                                                        <span class="day">19</span>
+                                                        <span class="day">26</span>
+                                                        <span class="day"></span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">CN</div>
+                                                        <span class="day">6</span>
+                                                        <span class="day">13</span>
+                                                        <span class="day">20</span>
+                                                        <span class="day">27</span>
+                                                        <span class="day"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="c-6">
+                                                <h4 class="heading-month">tháng 3 năm 2022</h4>
+                                                <div class="row list-days">
+                                                    <div class="row col-7">
+                                                        <div class="date">T2</div>
+                                                        <span class="day"></span>
+                                                        <span class="day rest">7</span>
+                                                        <span class="day rest">14</span>
+                                                        <span class="day rest">21</span>
+                                                        <span class="day rest">28</span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">T3</div>
+                                                        <span class="day">1</span>
+                                                        <span class="day">8</span>
+                                                        <span class="day">15</span>
+                                                        <span class="day">22</span>
+                                                        <span class="day">29</span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">T4</div>
+                                                        <span class="day">2</span>
+                                                        <span class="day">9</span>
+                                                        <span class="day">16</span>
+                                                        <span class="day">23</span>
+                                                        <span class="day">30</span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">T5</div>
+                                                        <span class="day">3</span>
+                                                        <span class="day">10</span>
+                                                        <span class="day">17</span>
+                                                        <span class="day">24</span>
+                                                        <span class="day">31</span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">T6</div>
+                                                        <span class="day">4</span>
+                                                        <span class="day">11</span>
+                                                        <span class="day">18</span>
+                                                        <span class="day">25</span>
+                                                        <span class="day"></span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">T7</div>
+                                                        <span class="day">5</span>
+                                                        <span class="day">12</span>
+                                                        <span class="day">19</span>
+                                                        <span class="day">26</span>
+                                                        <span class="day"></span>
+                                                    </div>
+                                                    <div class="col-7 row">
+                                                        <div class="date">CN</div>
+                                                        <span class="day">6</span>
+                                                        <span class="day">13</span>
+                                                        <span class="day">20</span>
+                                                        <span class="day">27</span>
+                                                        <span class="day"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          
+                                        </div>
+                                        <!-- Flexible days -->
+                                        <div class="flexible-days-detail">
+                                            <h4>Bạn muốn ở trong bao lâu?</h4>
+                                            <div class="row time-options">
+                                                <span>Cuối tuần</span>
+                                                <span>1 tuần</span>
+                                                <span>1 tháng</span>
+                                            </div>
+                                            <h4>Bạn muốn đi khi nào?</h4>
+                                            <div class="list-months">
+                                                <button class="month-btn prev-month-btn">
+                                                    <i class="fas fa-chevron-left"></i>
+                                                </button>
+                                                <button class="month-btn next-month-btn">
+                                                    <i class="fas fa-chevron-right"></i>
+                                                </button>
+                                                
+                                                <div class="row list-months-content">
+                                                    <div class="c-2 month active near-month">
+                                                        <i class="fas fa-calendar-alt"></i>
+                                                        <p>Tháng 2</p>
+                                                        <span>2022</span>
+                                                    </div>
+                                                    <div class="c-2 month active near-month">
+                                                        <i class="fas fa-calendar-alt"></i>
+                                                        <p>Tháng 3</p>
+                                                        <span>2022</span>
+                                                    </div>
+                                                    <div class="c-2 month active">
+                                                        <i class="fas fa-calendar-alt"></i>
+                                                        <p>Tháng 4</p>
+                                                        <span>2022</span>
+                                                    </div>
+                                                    <div class="c-2 month active">
+                                                        <i class="fas fa-calendar-alt"></i>
+                                                        <p>Tháng 5</p>
+                                                        <span>2022</span>
+                                                    </div>
+                                                    <div class="c-2 month active">
+                                                        <i class="fas fa-calendar-alt"></i>
+                                                        <p>Tháng 6</p>
+                                                        <span>2022</span>
+                                                    </div>
+                                                    <div class="c-2 month active">
+                                                        <i class="fas fa-calendar-alt"></i>
+                                                        <p>Tháng 7</p>
+                                                        <span>2022</span>
+                                                    </div>
+                                                    <div class="c-2 month active">
+                                                        <i class="fas fa-calendar-alt"></i>
+                                                        <p>Tháng 8</p>
+                                                        <span>2022</span>
+                                                    </div>
+                                                    <div class="c-2 month active">
+                                                        <i class="fas fa-calendar-alt"></i>
+                                                        <p>Tháng 9</p>
+                                                        <span>2022</span>
+                                                    </div>
+                                                    <div class="c-2 month active" >
+                                                        <i class="fas fa-calendar-alt"></i>
+                                                        <p>Tháng 10</p>
+                                                        <span>2022</span>
+                                                    </div>
+                                                    <div class="c-2 month active" >
+                                                        <i class="fas fa-calendar-alt"></i>
+                                                        <p>Tháng 11</p>
+                                                        <span>2022</span>
+                                                    </div>
+                                                    <div class="c-2 month active" >
+                                                        <i class="fas fa-calendar-alt"></i>
+                                                        <p>Tháng 12</p>
+                                                        <span>2022</span>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col c-3 row options">
+                            <div class="col  become-host text-center">
+                                <a href="">Trở thành chủ nhà </a>
+                            </div>
+                            <div class="col  category text-center">
+                                <span><i class="fas fa-globe"></i></span>
+                            </div>
+                            <div class="col  user-options">
+                                <i class="fas fa-bars"></i>
+                                <i class="fas fa-user"></i>
+
+                                <!-- user-options -->
+                                <div class="sub-user-options ">
+                                    <div class="sub-user-options-wrap">
+                                        <!-- Modal -->
+                                        <div id="modal">
+                                            <div id="register">
+                                                <span>Đăng ký</span>
+                                            </div>
+                                            <div id="log-in">
+                                                <span>Đăng nhập</span>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <!-- User options suggesst -->
+                                        <div id="sub-user-options-suggest">
+                                            <div class="">
+                                                <span>Cho thuê nhà</span>
+                                            </div>
+                                            <div class="">
+                                                <span>Tổ chức trải nghiệm</span>
+                                            </div>
+                                            <div class="">
+                                                <span>Trợ giúp</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile -->
+                    <div class="row header-box-search">
+                        <div class="search-icon">
+                            <i class="fas fa-search"></i>
+                            Bạn sắp đi đâu ?
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- Thumbnail -->
+            <div id="thumb-nail">
+                <div class="grid wide thumb-nail">
+                    <div class="row thumb-nail__wrap">
+                        <h1 class="thumb-nail__text">Bạn chưa biết đi đâu ?</h1>
+                        <h1 class="thumb-nail__text text-center">Tuyệt !</h1>
+                        <a href="" class="flexible-search-btn text-center">Tìm kiếm linh hoạt</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Container -->
+            <div class="container">
+                <div class="grid wide">
+                    <div class="content">
+                        <h1 class="content-heading">Cảm hứng cho chuyến đi tiếp theo của bạn</h1>
+                        <div class="row list-homestays">
+                            <div class="l-3 c-6 row homestay">
+                                <img src="./assets/img/content-img-1.png" alt="" class="l-12 c-12 homestay__img">
+                                <div class="l-12 c-12 homestay-wrap" style="background-color: #bc1a6e;">
+                                    <h2>Luray</h2>
+                                    <p class="homestay__distance">Cách 58 dặm</p>
+                                </div>
+                            </div>
+                           
+                            <div class="l-3 c-6 row homestay">
+                                <img src="./assets/img/content-img-2.jpg" alt="" class="l-12 c-12 homestay__img">
+                                <div class="l-12 c-12 homestay-wrap" style="background-color: #d93b30;">
+                                    <h2>Ocean city</h2>
+                                    <p class="homestay__distance">Cách 157 dặm</p>
+                                </div>
+                            </div>
+                            <div class="l-3 c-6 row homestay">
+                                <img src="./assets/img/content-img-3.jpg" alt="" class="l-12 c-12 homestay__img">
+                                <div class="l-12 c-12 homestay-wrap" style="background-color: #de3151;">
+                                    <h2>Berkeley Springs</h2>
+                                    <p class="homestay__distance">Cách 56 dặm</p>
+                                </div>
+                            </div>
+                            <div class="l-3 c-6 row homestay">
+                                <img src="./assets/img/content-img-4.jpg" alt="" class="l-12 c-12 homestay__img">
+                                <div class="l-12 c-12 homestay-wrap" style="background-color: #cc2d4a;">
+                                    <h2>Oakland</h2>
+                                    <p class="homestay__distance">Cách 106 dặm</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <h1 class="content-heading">Khám phá Trải nghiệm Airbnb</h1>
+                        <div class="row list-explore">
+                            <div class="col l-6 c-12 explore" >
+                                <div class="explore-wrap" style="background-image: url('./assets/img/explore-1.jpg')">
+                                    <div class="explore__content">
+                                        <h1 class="explore__heading">Những điều <br/> nên trải nghiệm <br/> trong chuyến đi <br/> của bạn</h1>
+                                        <a href=""class="explore__btn">Trải nghiệm</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col l-6 c-12 explore" >
+                                <div class="explore-wrap" style="background-image: url('./assets/img/explore-2.jpg')">
+                                    <div class="explore__content">
+                                        <h1 class="explore__heading">Những điều nên <br/> trải nghiệm tại nhà.</h1>
+                                        <a href=""class="explore__btn">Trải nghiệm trực tuyến</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div class="content">
+                        <div class="row list-explore">
+                            <div class="col c-12 explore" >
+                                <div class="explore-wrap explorte__support-host" style="background-image: url('./assets/img/receptionist.jpg');">
+                                    <div class="explore__content">
+                                        <h1 class="explore__heading" >Bạn có thắc mắc <br/> về việc <br/>đón tiếp khách?</h1>
+                                        <a href=""class="explore__btn">Hỏi ý kiến Chủ nhà siêu cấp</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Footer -->
+            <footer>
+                <div class="grid wide">
+                    <div class="row footer-content">
+                        <ul class="col l-3 m-12 c-12 footer__list-items">
+                            <h4>Hỗ trợ</h4>
+                            <li><a class="footer-content__link" href="">Trung tâm trợ giúp</a></li>
+                            <li><a class="footer-content__link" href="">Thông tin an toàn</a></li>
+                            <li><a class="footer-content__link" href="">Các tùy chọn hủy</a></li>
+                            <li><a class="footer-content__link" href="">Biện pháp ứng phó với đại dịch COVID-19 của chúng tôi</a></li>
+                            <li><a class="footer-content__link" href="">Hỗ trợ người khuyết tật</a></li>
+                            <li><a class="footer-content__link" href="">Báo cáo lo ngại của hàng xóm</a></li>
+                        </ul>
+                        <ul class="col l-3 m-12 c-12 footer__list-items">
+                            <h4>Cộng đồng</h4>
+                            <li><a class="footer-content__link" href="">Airbnb.org: nhà ở cứu trợ</a></li>
+                            <li><a class="footer-content__link" href="">Hỗ trợ dân tị nạn Afghanistan</a></li>
+                            <li><a class="footer-content__link" href="">Vì sự đa dạng và thân thuộc</a></li>
+                            <li><a class="footer-content__link" href="">Chống phân biệt đối xử</a></li>
+                        </ul>
+                        <ul class="col l-3 m-12 c-12 footer__list-items">
+                            <h4>Đón tiếp khách</h4>
+                            <li><a class="footer-content__link" href="">Thử đón tiếp khách</a></li>
+                            <li><a class="footer-content__link" href="">AirCover: bảo vệ cho Host</a></li>
+                            <li><a class="footer-content__link" href="">Xem tài nguyên đón tiếp khách</a></li>
+                            <li><a class="footer-content__link" href="">Truy cập diễn đàn cộng đồng</a></li>
+                            <li><a class="footer-content__link" href="">Đón tiếp khách có trách nhiệm</a></li>
+                            
+                        </ul>
+                        <ul class="col l-3 m-12 c-12 footer__list-items">
+                            <h4>Giới thiệu</h4>
+                            <li><a class="footer-content__link" href="">Trang tin tức</a></li>
+                            <li><a class="footer-content__link" href="">Tìm hiểu các tính năng mới</a></li>
+                            <li><a class="footer-content__link" href="">Thư ngỏ từ các nhà sáng lập</a></li>
+                            <li><a class="footer-content__link" href="">Cơ hội nghề nghiệp</a></li>
+                            <li><a class="footer-content__link" href="">Nhà đầu tiên</a></li>
+                            <li><a class="footer-content__link" href="">Airbnb Luxe</a></li>
+                        </ul>
+                    </div>
+                    <hr>
+
+                    <div class="row footer-info">
+                        <div class="col c-8 row footer-info__box-1">
+                            <span>© 2022 Airbnb, Inc.</span>
+                            <span>.</span>
+                            <a href="">Quyền riêng tư</a>
+                            <span>.</span>
+                            <a href="">Điều khoản</a>
+                            <span>.</span>
+                            <a href="">Sơ đồ trang web</a>
+                        </div>
+                        <div class="col c-4 row footer-info__box-2">
+                            <div class="row container-language-cash">
+                                <div class="support-language">
+                                    <i class="fas fa-globe"></i>
+                                    <span>Tiếng Việt</span>
+                                </div>
+                                <div class="support-cash">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>USD</span>
+                                </div>
+                            </div>
+                            <div class="row container-social-network">
+                                <a href="" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center" style="font-size: 1.8rem; margin: 0; padding-bottom: 10px;">© Design by Dao Tai</p>
+            </footer>
+        </div>
+
+        <!-- Language-area and category cash -->
+        <div id="support-global" class="" >
+            <div class="support-global-container">
+                <div class="support-global__close-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="support-global-wrap">
+                    
+                    <!-- Heading -->
+                    <div class="support-global-heading">
+                        <span id="language-areas" class="active">Ngôn ngữ và khu vực</span>
+                        <span id="category-cash">Loại tiền tệ</span>
+                        <i id="line-active"></i>
+                    </div>
+
+                    <!--Translate  -->
+                   <div id="support-translate" class="support-translate active">
+                        <div class="row support-global-item support-global-translate ">
+                            <div class="col c-10 support-global-translate__text">
+                                <h3>Bản dịch</h3>
+                                <span>Dịch tự động nội dung mô tả và đánh giá sang Tiếng Việt.</span>
+                            </div>
+                            <div class="col c-2 support-global-translate__apply-btn">
+                                <div class="support-global-translate__apply-btn--circle ">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="support-global-item">
+                            <h1>Ngôn ngữ và khu vực được đề xuất</h1>
+                            <div class="row language-area-suggest">
+                                <a href="" class="col col-2-4">
+                                    <p>English</p>
+                                    <p class="language-area-suggest--area">United States</p>
+                                </a>
+                                <a href="" class="col col-2-4">
+                                    <p>English</p>
+                                    <p class="language-area-suggest--area">United Kingdom</p>
+                                </a>
+                                <a href="" class="col col-2-4">
+                                    <p>English</p>
+                                    <p class="language-area-suggest--area">Australia</p>
+                                </a>
+                                <a href="" class="col col-2-4">
+                                    <p>Francais</p>
+                                    <p class="language-area-suggest--area">France</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="support-global-item">
+                            <h1>Chọn khu vực và ngôn ngữ</h1>
+                            <div class="row language-area-suggest language-area-suggest--detail">
+                                <!-- <a href="" class="col col-2-4">
+                                    <p>Tiếng Việt</p>
+                                    <p class="language-area-suggest--area">Việt Nam</p>
+                                </a> -->
+                            </div>
+                        </div>
+                   </div>
+
+                   <!-- Category cash -->
+                   <div id="support-cash" class="support-cash">
+                    <div class="support-global-item">
+                        <h1>Chọn loại tiền tệ</h1>
+                        <div class="row category-cash-suggest">
+                            <!-- <a href="" class="col col-2-4">
+                                <p></p>
+                                <p class="category-cash-suggest--unit"></p>
+                            </a> -->
+                           
+                            
+                        </div>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu mobile -->
+        <div id="menu">
+            <div class="menu">
+                <div class="menu-icon">
+                    <i class="fas fa-search"></i>
+                    <p>Khám phá</p>
+                </div>
+                <div class="menu-icon">
+                    <i class="fas fa-heart"></i>
+                    <p>Yêu thích</p>
+                </div>
+                <div class="menu-icon">
+                    <i class="fas fa-user"></i>
+                    <p>Đăng nhập</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab search mobile -->
+        <div id="tab-search-mobile">
+            <div class="grid wide">
+                <div class="row tab-search-heading">
+                    <button class="col c-2 tab-search__prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <input type="text" class="col c-10 tab-search__search-input" placeholder="Bạn sẽ đi đâu ...">
+                </div>
+                <div class="tab-search-container">
+                    <h3 class="tab-search__title">Mọi lúc,mọi nơi</h3>
+                    <div class="row tab-search__search-box">
+                        <span>Tìm kiếm linh hoạt</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="tab-search__place-trending">
+                        <h3>Địa điểm nghỉ dưỡng gần bạn</h3>
+                        <ul class="list-place-trending">
+                            <li class="row place-trending">
+                                <div class="col c-2 place-trending__image">
+                                    <img src="./assets/img/explore-1.jpg" alt="">
+                                </div>
+                                <div class="col c-8 place-trending__desc">
+                                    <div class="place-trending__name">New York</div>
+                                    <div class="palce-treding__time-drive">5 giờ lái xe</div>
+                                </div>
+                            </li>
+                            <li class="row place-trending">
+                                <div class="col c-2 place-trending__image">
+                                    <img src="./assets/img/explore-1.jpg" alt="">
+                                </div>
+                                <div class="col c-8 place-trending__desc">
+                                    <div class="place-trending__name">New York</div>
+                                    <div class="palce-treding__time-drive">5 giờ lái xe</div>
+                                </div>
+                            </li>
+                            <li class="row place-trending">
+                                <div class="col c-2 place-trending__image">
+                                    <img src="./assets/img/explore-1.jpg" alt="">
+                                </div>
+                                <div class="col c-8 place-trending__desc">
+                                    <div class="place-trending__name">New York</div>
+                                    <div class="palce-treding__time-drive">5 giờ lái xe</div>
+                                </div>
+                            </li>
+                            <li class="row place-trending">
+                                <div class="col c-2 place-trending__image">
+                                    <img src="./assets/img/explore-1.jpg" alt="">
+                                </div>
+                                <div class="col c-8 place-trending__desc">
+                                    <div class="place-trending__name">New York</div>
+                                    <div class="palce-treding__time-drive">5 giờ lái xe</div>
+                                </div>
+                            </li>
+                            <li class="row place-trending">
+                                <div class="col c-2 place-trending__image">
+                                    <img src="./assets/img/explore-1.jpg" alt="">
+                                </div>
+                                <div class="col c-8 place-trending__desc">
+                                    <div class="place-trending__name">New York</div>
+                                    <div class="palce-treding__time-drive">5 giờ lái xe</div>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>

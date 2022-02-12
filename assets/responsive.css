@@ -1,0 +1,262 @@
+
+
+/* Tablet */
+@media (max-width: 1039px){
+    .homestay{
+        transform: scale(1) ;
+        margin-top: 16px !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+
+    .become-host{
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+    }
+
+    header .content .options .category{
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+
+    header .content .options .col.user-options{
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%;
+    }
+
+    .footer-info__box-2 > div{
+        padding: 15px 0 !important;
+    }
+}
+@media (max-width: 1039px) and (min-width: 740px){
+    .become-host{
+        flex: 0 0 66.66667%;
+        max-width: 66.66667%;
+    }
+
+    header .content .options .category{
+        flex: 0 0 8.33333%;
+        max-width: 8.33333%;
+    }
+
+    header .content .options .col.user-options{
+      
+        flex: 0 0 16.66667%;
+        max-width: 16.66667%;
+    }
+
+    header .content .suggest{
+        flex: 0 0 100%;
+        max-width: 100%;
+        order: 3;
+        margin-top: 15px;
+    }
+
+    header .content .options{
+        flex: 0 0 75%;
+        max-width: 75%;
+    }
+   
+    .become-host {
+        padding: 0 !important;
+    }
+
+    header .content .suggest .list-suggest{
+        width: 600px;
+    }
+
+    .suggest-address input::placeholder{
+        font-size: 1.4rem;
+    }
+
+    .suggest-search-icon{
+        padding: 10px;
+    }
+
+    .category{
+        font-size: 2rem !important;
+    }
+
+    .explore-wrap{
+        height: 50vh;
+    }
+
+    .explore-wrap.explorte__support-host{
+        height: 35vh;
+    }
+
+    .footer-content__link{
+        font-size: 2rem;
+    }
+
+    .footer-info__box-1 > a{
+        font-size: 2rem;
+    }
+
+    .container-language-cash span{
+        font-size: 2rem;
+    }
+
+    .support-global-container{
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 600px;
+        width: 95%;
+        font-size: 2rem;
+        line-height: 1.6;
+    }
+    
+    .support-global-heading > span{
+        font-size: 2rem !important;
+    }
+
+    .support-global__close-btn{
+        font-size: 3.2rem;
+        padding: 10px 20px;
+    }
+
+    .explore__heading{
+        font-size: 5rem !important;
+    }
+
+    .footer-info{
+        justify-content: center;
+    }
+
+    .footer-info__box-1{
+        display: none;
+    }
+
+    .footer-info__box-2{
+        justify-content: space-between;
+    }
+
+    .footer-info__box-2 > div{
+        padding: 5px 0 40px;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .social-icon{
+        padding: 20px;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 739px){
+    
+    header .content{
+        display: none;
+    }
+    
+    #thumb-nail{
+        padding: 0;
+    }
+
+    .thumb-nail{
+        border-radius: 0;
+        padding-top: 100%;
+    }
+
+    .thumb-nail__text{
+        font-size: 2.8rem;
+    }
+
+    .flexible-search-btn{
+        padding: 20px;
+    }
+
+    .container{
+        padding-bottom: 0;
+    }
+
+    .content{
+        padding-top: 15px;
+    }
+
+    .content .content-heading{
+        font-size: 3.2rem;
+    }
+
+    .list-homestays{
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        margin-top: -25px;
+    }
+
+    .homestay{
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+    .explore{
+        margin-top: 24px;
+    }
+
+    .explore-wrap {
+        border-radius: 0;
+    }
+
+    .explore__content{
+        left: 10px;
+    }
+
+    .footer-content{
+        padding: 24px 12px;
+    }
+
+    .footer-info__box-2{
+        max-width: 100%;
+        flex: 0 0 100%;
+        padding-bottom: 15px;
+        justify-content: flex-start;
+        padding: 0 0 24px 24px;
+    }
+    
+    .container-social-network{
+        display: none;
+    }
+
+    footer{
+        margin-bottom: 50px;
+    }
+
+    .footer-content__link{
+        width: 100%;
+    }
+
+
+    .footer-info__box-1{
+        order: 2;
+        max-width: 100%;
+        flex: 0 0 100%;
+        padding: 0 0 24px 24px;
+    }
+
+    .footer-info__box-1 > span {
+        padding: 0 8px 0 0;
+    }
+
+
+    .footer-info__box-1 > span:first-child{
+        max-width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+    }
+
+    .footer-info__box-1 > a{
+        padding-right: 10px;
+    }
+
+    #menu{
+        display: block;
+    }
+
+    .header-box-search,
+    .nav{
+        display: flex;
+    }
+    
+}
